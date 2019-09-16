@@ -1,4 +1,4 @@
-# [csaybar/rgee](https://cloud.docker.com/u/csaybar/repository/docker/csaybar/rgee)
+# [csaybar/rgee](https://hub.docker.com/r/csaybar/rgee)
 
 Geospatial Docker for rgee, building on rocker/geospatial.
 
