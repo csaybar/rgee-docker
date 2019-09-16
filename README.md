@@ -1,18 +1,22 @@
-# rgee-docker
-
-[![DOI](https://zenodo.org/badge/85984414.svg)](https://zenodo.org/badge/latestdoi/85984414)
+# [csaybar/rgee](https://cloud.docker.com/u/csaybar/repository/docker/csaybar/rgee)
 
 Geospatial Docker for rgee, building on rocker/geospatial.
 
 This image is a modification of [`rocker/geospatial`](https://github.com/rocker-org/geospatial) with support to Python 3.7 and Selenium drivers.  As such, this image includes RStudio and tidyverse packages. Versions older than the most recent will install R packages from an MRAN snapshot, and may not provide all the same packages as seen on the most recent versions. 
 
 ## Installation and execution
-- Install [docker]()
-- In terminal execute
+- Install [docker](https://docs.docker.com/install/)
+- In terminal execute, as follow:
 
 ```
-uploading the docker images in my toaster with an internet connection from Peru :'v ... please wait
+docker run -d -p 8787:8787 -e USER=rgee -e PASSWORD=rgee --name rgee-dev csaybar/rgee
 ```
+- After that, in your preferred browser, run:
+
+```
+127.0.0.1:8787
+```
+
 
 ## Packages - R
 

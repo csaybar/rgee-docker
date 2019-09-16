@@ -108,7 +108,4 @@ ENV PATH /opt/conda/bin:$PATH
 RUN  mkdir -p /home/rgee/.config/earthengine/ && \
      echo 'RETICULATE_PYTHON=/usr/bin/python3' > /home/rgee/.Renviron
 
-ADD      demo /home/rgee/demo
-COPY     credentials/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com /home/rgee/.config/earthengine/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com
-COPY     credentials/credentials /home/rgee/.config/earthengine/credentials
-COPY     credentials/GCS_AUTH_FILE.json /home/rgee/.config/earthengine/GCS_AUTH_FILE.json
+ADD  demo /home/rgee/demo
