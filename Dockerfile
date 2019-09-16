@@ -92,10 +92,10 @@ RUN pip3 install coveralls \
     oauth2client \
     selenium \
     bs4 \
-    pyasn1 \
     numpy \
     requests_toolbelt \
-    earthengine-api==0.1.175 
+    earthengine-api==0.1.175 \
+    pyasn1 
 
 # Install anaconda
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
@@ -103,9 +103,15 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh
 
-ENV PATH /opt/conda/bin:$PATH
+#ENV PATH /opt/conda/bin:$PATH
 
-RUN  mkdir -p /home/rgee/.config/earthengine/ && \
+RUN  pip3 install earthengine-api==0.1.175
+
+RUN  mkdir -p /home/rgee/.config/earthengine/NA && \
      echo 'RETICULATE_PYTHON=/usr/bin/python3' > /home/rgee/.Renviron
 
 ADD  demo /home/rgee/demo
+COPY credentials/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com /home/rgee/.config/earthengine/NA/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com
+COPY credentials/credentials /home/rgee/.config/earthengine/credentials
+COPY credentials/rgee_sessioninfo.txt /home/rgee/.config/earthengine/rgee_sessioninfo.txt
+RUN  pip3 install pyasn1 --upgrade
