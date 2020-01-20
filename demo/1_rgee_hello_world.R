@@ -1,5 +1,4 @@
 # Spatial R packages ---------------------------------------------------------------
-remotes::install_github('csaybar/rgee',ref = "v.0.1.0")
 library(rgee)
 library(sf)
 library(cptcity)

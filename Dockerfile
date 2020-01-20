@@ -94,7 +94,7 @@ RUN pip3 install coveralls \
     bs4 \
     numpy \
     requests_toolbelt \
-    earthengine-api==0.1.175 \
+    earthengine-api==0.1.210 \
     pyasn1 
 
 # Install anaconda
@@ -105,7 +105,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 #ENV PATH /opt/conda/bin:$PATH
 
-RUN  pip3 install earthengine-api
+RUN  R -e 'devtools::install_github("csaybar/rgee")'
 
 RUN  mkdir -p /home/rgee/.config/earthengine/NA && \
      echo 'RETICULATE_PYTHON=/usr/bin/python3' > /home/rgee/.Renviron
