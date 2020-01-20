@@ -105,7 +105,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 #ENV PATH /opt/conda/bin:$PATH
 
-RUN  pip3 install earthengine-api==0.1.175
+RUN  pip3 install earthengine-api
 
 RUN  mkdir -p /home/rgee/.config/earthengine/NA && \
      echo 'RETICULATE_PYTHON=/usr/bin/python3' > /home/rgee/.Renviron
