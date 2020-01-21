@@ -12,7 +12,7 @@ RUN apt-get install -y google-chrome-stable
 # set display port to avoid crash
 ENV DISPLAY=:99
 
-# R 
+# R
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libv8-3.14-dev \
@@ -88,14 +88,14 @@ RUN apt-get install -y \
 		python3-dev \
 	&& pip3 install virtualenv
 
-RUN pip3 install coveralls \    
+RUN pip3 install coveralls \
     oauth2client \
     selenium \
     bs4 \
     numpy \
     requests_toolbelt \
     earthengine-api==0.1.210 \
-    pyasn1 
+    pyasn1
 
 # Install anaconda
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
@@ -111,6 +111,7 @@ RUN  mkdir -p /home/rgee/.config/earthengine/NA && \
      echo 'RETICULATE_PYTHON=/usr/bin/python3' > /home/rgee/.Renviron
 
 ADD  demo /home/rgee/demo
+ADD  demo /home/rgee/.config/earthengine/
 COPY credentials/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com /home/rgee/.config/earthengine/NA/cd26ed5dc626f11802a652e81d02762e_data.colec.fbf@gmail.com
 COPY credentials/credentials /home/rgee/.config/earthengine/credentials
 COPY credentials/rgee_sessioninfo.txt /home/rgee/.config/earthengine/rgee_sessioninfo.txt
