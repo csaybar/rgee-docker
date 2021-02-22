@@ -4,7 +4,7 @@ services:
   rgee:
     image: csaybar/rgee
     volumes:      
-      - $HOME/.config/earthengine/aybar1994:/home/rgee/.config/earthengine/ndef
+      - $HOME/.config/earthengine/ndef:/home/rgee/.config/earthengine/ndef
     environment:
       - USER=rgee
       - PASSWORD=rgee
