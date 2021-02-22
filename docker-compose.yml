@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  rgee:
+    image: csaybar/rgee
+    volumes:      
+      - $HOME/.config/earthengine/aybar1994:/home/rgee/.config/earthengine/ndef
+    environment:
+      - USER=rgee
+      - PASSWORD=rgee
+    ports:
+      - "8787:8787"
